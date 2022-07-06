@@ -1,0 +1,36 @@
+<section>
+    <div class="container mt-5 col-12">
+            <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Address</th>
+      <th scope="col">Pincode</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Payment Method</th>
+      <th scope="col">Total Amount</th>
+      <th scope="col">Status</th>
+       <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each orders}}
+    <tr>
+      <th>{{this.date}}</th>
+      <td>{{this.deliveryDetails.address}}</td>
+      <td>{{this.deliveryDetails.pincode}}</td>
+      <td>{{this.deliveryDetails.mobile}}</td>
+      <td>{{this.paymentMethod}}</td>
+      <td>{{this.totalAmount}}</td>
+      <td>{{this.status}}</td>
+      <td>
+        <a href="/view-order-products/{{this._id}}" class="btn btn-primary">View products</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+  
+</table>
+        
+    </div>
+</section>

@@ -1,0 +1,221 @@
+<body style="background-color: #d2c9ff;">
+    <section>
+
+        <div class="container">
+            <h1 class="mt-5 ml-5">Enter order details</h1>
+
+            <form action="" id="checkout-form">
+                <div class="container col-md-8 float-left mt-5">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="number" class="form-control" name="mob" id="mob"
+                                placeholder="10-digit mobile number">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+
+                            <input type="number" class="form-control" name="pin" id="pin" placeholder="Pincode">
+                        </div>
+                        <div class="form-group col-md-6">
+
+                            <input type="text" class="form-control" name="locality" id="locality"
+                                placeholder="Locality">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+
+                            <input type="text" class="form-control form-control-lg mb-3" name="address" id="address"
+                                placeholder="Address" style="height: 100px;">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+
+                            <input type="text" class="form-control" name="city" id="city"
+                                placeholder="City/District/Town">
+                            <input type="text" name="userId" value="{{user._id}}" hidden>
+                        </div>
+                        <div class="form-group col-md-4">
+
+                            <select name="state" id="inputState" class="form-control">
+                                <option value="">State</option>
+                                <option value="Andaman and nicobar islands">Andaman and nicobar islands</option>
+                                <option value="Andra Pradesh">Andra Pradesh</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chattisgarh">Chhattisgarh</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Paradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerlaa">Kerala</option>
+                                <option value="Ladakh">Ladakh</option>
+                                <option value="Lakdhadeep">Lakshadeep</option>
+                                <option value="Madya Pradesh">Madya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Pudhucheery">Pudhucheery</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="West Bengal">West Bengal</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 float-right">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p><strong>Expected shipping delivery</strong></p>
+                            <p class="mb-0">12.10.2020 - 14.10.2020</p>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p><strong>Select payment method</strong></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment-method" value="COD" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    <strong> Cash on delivery</strong>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payment-method" value="ONLINE"
+                                    checked>
+                                <label class="form-check-label" for="exampleRadios2">
+                                    <strong> Online Payment </strong>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+
+                        <div class="card-header py-3">
+                            <h5 class="mb-0">Summary</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    Products
+                                    <span>₹ {{total}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    Shipping
+                                    <span class="text-success">FREE</span>
+                                </li>
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                    <div>
+                                        <strong>Total amount</strong>
+                                        <strong>
+                                            <p class="mb-0">(including VAT)</p>
+                                        </strong>
+                                    </div>
+                                    <span><strong>₹{{total}}</strong></span>
+                                </li>
+                            </ul>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                Check Out
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+
+
+    </section>
+    
+    <script>
+        $("#checkout-form").submit((e) => {
+            e.preventDefault()
+            $.ajax({
+                url: '/place-order',
+                method: 'post',
+                data: $('#checkout-form').serialize(),
+                success: (response) => {
+                    alert(response)
+                    if (response.codSuccess) {
+                        location.href = '/order-success'
+                    } else {
+                        razorPayPayment(response)
+                    }
+                }
+            })
+        })
+
+        function razorPayPayment(order) {
+            var options = {
+                "key": "rzp_test_Kts2ch8LMAIJM8", // Enter the Key ID generated from the Dashboard
+                "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                "currency": "INR",
+                "name": "Nishal Dinesh",
+                "description": "Test Transaction",
+                "image": "https://example.com/your_logo",
+                "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                "handler": function (response) {
+                    console.log("response :",response);
+
+                    verifyPayment(response,order)
+                },
+                "prefill": {
+                    "name": "Gaurav Kumar",
+                    "email": "gaurav.kumar@example.com",
+                    "contact": "9999999999"
+                },
+                "notes": {
+                    "address": "Razorpay Corporate Office"
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            }; 
+            var rzp1 = new Razorpay(options);
+             rzp1.open();
+        }
+        function verifyPayment(payment,order){
+            $.ajax({
+                url:'/verify-payment',
+                data:{
+                    payment,
+                    order
+                },
+                method: 'post',
+                success:(response)=>{
+                    if(response.status){
+                        location.href='/order-success'
+                    }else{
+                        alert("Payment failed")
+                    }
+                }
+                
+            })
+        }
+    </script>
+</body>
